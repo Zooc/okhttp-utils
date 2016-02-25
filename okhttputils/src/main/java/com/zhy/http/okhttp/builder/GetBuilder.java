@@ -3,6 +3,7 @@ package com.zhy.http.okhttp.builder;
 import com.zhy.http.okhttp.request.GetRequest;
 import com.zhy.http.okhttp.request.RequestCall;
 
+import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class GetBuilder extends OkHttpRequestBuilder
         {
             for (String key : params.keySet())
             {
-                sb.append(key).append("=").append(params.get(key)).append("&");
+                sb.append(key).append("=").append(URLEncoder.encode(params.get(key))).append("&");
             }
         }
 
